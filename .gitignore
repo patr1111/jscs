@@ -1,0 +1,14 @@
+# 大きなファイル
+*.mov
+*.wav
+*.mp4
+*.mp3
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+# その他の一般的な除外ファイル
+__pycache__/
+*.pyc
+.DS_Store 
