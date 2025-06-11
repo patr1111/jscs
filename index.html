@@ -38,33 +38,46 @@
         </div>
     </div>
     <script>
+        // ページ読み込み時のデバッグメッセージ
+        console.log('ページが読み込まれました');
+
         function login() {
+            console.log('login関数が呼び出されました');
+            
             const userId = document.getElementById('userId').value.trim();
             const password = document.getElementById('password').value.trim();
 
-            console.log('ログイン試行:', { userId, password }); // デバッグ用
+            console.log('入力値:', { userId, password });
 
             if (userId === '111111' && password === '111111') {
-                console.log('ログイン成功'); // デバッグ用
+                console.log('ログイン成功 - リダイレクトします');
                 window.location.href = 'questions.html';
             } else {
-                console.log('ログイン失敗'); // デバッグ用
-                alert('社員IDまたはパスワードが正しくありません。\nデモ用の認証情報：\n社員ID: 111111\nパスワード: 111111');
+                console.log('ログイン失敗 - アラートを表示します');
+                alert('社員IDまたはパスワードが正しくありません。');
             }
         }
 
         // Enterキーでもログインできるようにする
         document.getElementById('password').addEventListener('keypress', function(e) {
+            console.log('キーが押されました:', e.key);
             if (e.key === 'Enter') {
-                e.preventDefault(); // フォームのデフォルト送信を防止
+                e.preventDefault();
+                console.log('Enterキーが押されました - ログインを実行します');
                 login();
             }
         });
 
         // フォームの送信を防止
         document.getElementById('loginForm').addEventListener('submit', function(e) {
+            console.log('フォーム送信が試みられました');
             e.preventDefault();
             login();
+        });
+
+        // ログインボタンのクリックイベントを確認
+        document.querySelector('button[onclick="login()"]').addEventListener('click', function(e) {
+            console.log('ログインボタンがクリックされました');
         });
     </script>
 </body>
