@@ -38,7 +38,24 @@
         </div>
     </div>
     <script>
-        // 必要なJavaScriptコードをここに追加
+        function login() {
+            const userId = document.getElementById('userId').value;
+            const password = document.getElementById('password').value;
+
+            if (userId === '111111' && password === '111111') {
+                // ログイン成功時はquestions.htmlに遷移
+                window.location.href = 'questions.html';
+            } else {
+                alert('社員IDまたはパスワードが正しくありません。\nデモ用の認証情報：\n社員ID: 111111\nパスワード: 111111');
+            }
+        }
+
+        // Enterキーでもログインできるようにする
+        document.getElementById('password').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                login();
+            }
+        });
     </script>
 </body>
 </html>
