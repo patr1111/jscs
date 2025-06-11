@@ -370,9 +370,17 @@
     </div>
     <script>
         // ページ読み込み時に質問フォームを表示する
-        window.onload = function() {
-            document.getElementById('mainPage').classList.remove('hidden');
-        };
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('ページが読み込まれました');
+            const mainPage = document.getElementById('mainPage');
+            if (mainPage) {
+                console.log('mainPage要素が見つかりました');
+                mainPage.classList.remove('hidden');
+                console.log('hiddenクラスを削除しました');
+            } else {
+                console.error('mainPage要素が見つかりません');
+            }
+        });
     </script>
 </body>
 </html>
