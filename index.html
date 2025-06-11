@@ -16,7 +16,7 @@
                 <h1 class="text-3xl font-bold text-blue-600 mb-2">AIお仕事探しコーチ</h1>
                 <p class="text-gray-600">P社社員向けキャリア支援システム</p>
             </div>
-            <form id="loginForm">
+            <form id="loginForm" onsubmit="return false;">
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="userId">
                         <i class="fas fa-user mr-2"></i>社員ID
@@ -39,13 +39,16 @@
     </div>
     <script>
         function login() {
-            const userId = document.getElementById('userId').value;
-            const password = document.getElementById('password').value;
+            const userId = document.getElementById('userId').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            console.log('ログイン試行:', { userId, password }); // デバッグ用
 
             if (userId === '111111' && password === '111111') {
-                // ログイン成功時はquestions.htmlに遷移
+                console.log('ログイン成功'); // デバッグ用
                 window.location.href = 'questions.html';
             } else {
+                console.log('ログイン失敗'); // デバッグ用
                 alert('社員IDまたはパスワードが正しくありません。\nデモ用の認証情報：\n社員ID: 111111\nパスワード: 111111');
             }
         }
@@ -53,8 +56,15 @@
         // Enterキーでもログインできるようにする
         document.getElementById('password').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
+                e.preventDefault(); // フォームのデフォルト送信を防止
                 login();
             }
+        });
+
+        // フォームの送信を防止
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            login();
         });
     </script>
 </body>
