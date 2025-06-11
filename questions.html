@@ -389,41 +389,99 @@
         function fillTestData() {
             console.log('テストデータの入力を開始します');
             
-            // ラジオボタンのテスト入力
-            const radioQuestions = ['q1', 'q4', 'q5', 'q6', 'q8', 'q9', 'q15', 'q16', 'q26', 'q41'];
-            radioQuestions.forEach(q => {
-                const radios = document.getElementsByName(q);
-                if (radios.length > 0) {
-                    const randomIndex = Math.floor(Math.random() * radios.length);
-                    radios[randomIndex].checked = true;
-                }
-            });
+            // 基本情報・キャリア志向（10問）
+            // Q1: 現在の職位・職種において何年の経験がありますか？
+            document.querySelector('input[name="q1"][value="4"]').checked = true;
 
-            // チェックボックスのテスト入力
-            const checkboxQuestions = ['q2', 'q7', 'q11', 'q46'];
-            checkboxQuestions.forEach(q => {
-                const checkboxes = document.getElementsByName(q);
-                if (checkboxes.length > 0) {
-                    // 各質問で2-3個のチェックボックスをランダムに選択
-                    const numToCheck = Math.floor(Math.random() * 2) + 2;
-                    for (let i = 0; i < numToCheck; i++) {
-                        const randomIndex = Math.floor(Math.random() * checkboxes.length);
-                        checkboxes[randomIndex].checked = true;
-                    }
-                }
-            });
+            // Q2: 現在までにパナソニック内で経験した職種
+            document.querySelector('input[name="q2"][value="sales"]').checked = true;
+            document.querySelector('input[name="q2"][value="marketing"]').checked = true;
 
-            // テキストエリアのテスト入力
-            const textareas = document.querySelectorAll('textarea');
-            textareas.forEach(textarea => {
-                textarea.value = 'これはテスト入力です。' + Math.random().toString(36).substring(7);
-            });
+            // Q3: これまでのキャリアで最も達成感を得た仕事や成果
+            document.querySelector('textarea[name="q3"]').value = 
+                '2001年LGとのOEM買い入れ主査（エアコン）\n' +
+                '2003年HAマーケ組織統合・立ち上げ\n' +
+                '2006年冷蔵庫アジア地域参入\n' +
+                '2012年業務用コールドチェーン、サンヨーコラボ、海外組織立ち上げ';
 
-            // テキスト入力フィールドのテスト入力
-            const textInputs = document.querySelectorAll('input[type="text"]');
-            textInputs.forEach(input => {
-                input.value = 'テスト入力' + Math.random().toString(36).substring(7);
-            });
+            // Q4: 3年後のキャリアビジョン
+            document.querySelector('input[name="q4"][value="innovation"]').checked = true;
+
+            // Q5: キャリアにおいて最も優先度が高い要素
+            document.querySelector('input[name="q5"][value="learning"]').checked = true;
+
+            // Q6: どのような働き方を希望しますか
+            document.querySelector('input[name="q6"][value="project"]').checked = true;
+            document.querySelector('input[name="q6"][value="communication"]').checked = true;
+
+            // Q7: 転職を考える主な理由
+            document.querySelector('input[name="q7"][value="skillup"]').checked = true;
+            document.querySelector('input[name="q7"][value="challenge"]').checked = true;
+            document.querySelector('input[name="q7"][value="salary"]').checked = true;
+            document.querySelector('input[name="q7"][value="future"]').checked = true;
+            document.querySelector('input[name="q7"][value="other"]').checked = true;
+            document.querySelector('input[name="q7_other"]').value = '継続勤務不安、新規事業、楽しい仕事';
+
+            // Q8: リスキリングの時間
+            document.querySelector('input[name="q8"][value="3months"]').checked = true;
+            document.querySelector('input[name="q8"][value="depends"]').checked = true;
+
+            // Q9: 新しい職種への懸念
+            document.querySelector('input[name="q9"][value="learning"]').checked = true;
+
+            // Q10: 自主的な学習や自己啓発
+            document.querySelector('textarea[name="q10"]').value = 
+                '・商品モノづくりに関わる周辺職能の業務（OJTから）\n' +
+                '・ITパスポート受験準備中';
+
+            // スキル・適性評価（15問）
+            // Q11: 最も得意とするスキル
+            document.querySelector('input[name="q11"][value="logical"]').checked = true;
+            document.querySelector('input[name="q11"][value="leadership"]').checked = true;
+            document.querySelector('input[name="q11"][value="project"]').checked = true;
+
+            // Q12: デジタル技術に関するスキル
+            document.querySelector('input[name="q12_pc"][value="3"]').checked = true;
+            document.querySelector('input[name="q12_data"][value="1"]').checked = true;
+            document.querySelector('input[name="q12_prog"][value="1"]').checked = true;
+            document.querySelector('input[name="q12_marketing"][value="1"]').checked = true;
+            document.querySelector('input[name="q12_cloud"][value="2"]').checked = true;
+
+            // Q13: 言語スキル
+            document.querySelector('input[name="q13_read"][value="2"]').checked = true;
+            document.querySelector('input[name="q13_speak"][value="2"]').checked = true;
+            document.querySelector('input[name="q13_other"]').value = '中国';
+            document.querySelector('input[name="q13_other_level"][value="1"]').checked = true;
+
+            // Q15: チーム作業と個人作業
+            document.querySelector('input[name="q15"][value="3"]').checked = true;
+
+            // Q16: 環境変化への対応
+            document.querySelector('input[name="q16"][value="4"]').checked = true;
+
+            // 職種別適性質問
+            // Q26: 営業職の信頼関係構築
+            document.querySelector('input[name="q26"][value="solution"]').checked = true;
+            document.querySelector('input[name="q26"][value="honesty"]').checked = true;
+
+            // Q29: 品質管理・サステナビリティ
+            document.querySelector('textarea[name="q29"]').value = 
+                'ブランド醸成において\n' +
+                '・ボディブロー的に効いてくる。ただしLifeｒとの関連で短期化\n' +
+                '・絶対安全なメーカーとしての必須の義務';
+
+            // Q40: 高齢者向けソリューション開発
+            document.querySelector('textarea[name="q40"]').value = 
+                'カスタマイズ・コンサルティング←老化は進行';
+
+            // リスキリング意欲・適性
+            // Q41: 学習スタイル
+            document.querySelector('input[name="q41"][value="3"]').checked = true;
+
+            // Q46: 学習意欲が高い技術領域
+            document.querySelector('input[name="q46"][value="sustainability"]').checked = true;
+            document.querySelector('input[name="q46"][value="pm"]').checked = true;
+            document.querySelector('input[name="q46"][value="health"]').checked = true;
 
             console.log('テストデータの入力が完了しました');
         }
