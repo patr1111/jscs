@@ -1,0 +1,361 @@
+    <!-- メイン画面 -->
+    <div id="mainPage" class="hidden">
+        <!-- ヘッダー -->
+        <header class="bg-blue-600 text-white p-4">
+            <div class="container mx-auto flex justify-between items-center">
+                <h1 class="text-2xl font-bold">AIお仕事探しコーチ</h1>
+                <div class="text-right">
+                    <p>社員番号：1111111</p>
+                    <p>名前：田中太郎</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- 質問フォーム -->
+        <div class="container mx-auto p-6">
+            <form id="questionForm">
+                <!-- 基本情報・キャリア志向 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                    <h2 class="text-xl font-bold text-blue-600 mb-4">基本情報・キャリア志向（10問）</h2>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">1. 現在の職位・職種において何年の経験がありますか？</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center"><input type="radio" name="q1" value="1" class="mr-2"> 3年未満</label>
+                            <label class="flex items-center"><input type="radio" name="q1" value="2" class="mr-2"> 3年以上5年未満</label>
+                            <label class="flex items-center"><input type="radio" name="q1" value="3" class="mr-2"> 5年以上10年未満</label>
+                            <label class="flex items-center"><input type="radio" name="q1" value="4" class="mr-2"> 10年以上</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">2. 現在までにP社内で経験した職種をすべて選択してください。（複数選択可）</label>
+                        <div class="grid grid-cols-2 gap-2">
+                            <label class="flex items-center"><input type="checkbox" name="q2" value="dev" class="mr-2"> 製品開発・設計</label>
+                            <label class="flex items-center"><input type="checkbox" name="q2" value="prod" class="mr-2"> 生産・製造</label>
+                            <label class="flex items-center"><input type="checkbox" name="q2" value="qa" class="mr-2"> 品質管理</label>
+                            <label class="flex items-center"><input type="checkbox" name="q2" value="sales" class="mr-2"> 営業・販売</label>
+                            <label class="flex items-center"><input type="checkbox" name="q2" value="marketing" class="mr-2"> マーケティング</label>
+                            <label class="flex items-center"><input type="checkbox" name="q2" value="support" class="mr-2"> カスタマーサポート</label>
+                            <label class="flex items-center"><input type="checkbox" name="q2" value="logistics" class="mr-2"> 物流・サプライチェーン</label>
+                            <label class="flex items-center"><input type="checkbox" name="q2" value="hr" class="mr-2"> 人事・総務</label>
+                        </div>
+                        <div class="mt-2">
+                            <label class="flex items-center"><input type="checkbox" name="q2" value="other" class="mr-2"> その他</label>
+                            <input type="text" name="q2_other" placeholder="具体的に記入" class="mt-1 border rounded px-2 py-1 w-full">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">3. これまでのキャリアで最も達成感を得た仕事や成果は何ですか？（200字以内）</label>
+                        <textarea name="q3" class="w-full border rounded px-3 py-2" rows="4" maxlength="200"></textarea>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">4. 5年後のキャリアビジョンについて、最も近いものを選んでください。</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center"><input type="radio" name="q4" value="specialist" class="mr-2"> 専門性を高め、現在の専門分野でのエキスパートになりたい</label>
+                            <label class="flex items-center"><input type="radio" name="q4" value="generalist" class="mr-2"> より広い視野と多様なスキルを持つゼネラリストになりたい</label>
+                            <label class="flex items-center"><input type="radio" name="q4" value="management" class="mr-2"> マネジメント職として組織やチームを率いていきたい</label>
+                            <label class="flex items-center"><input type="radio" name="q4" value="innovation" class="mr-2"> 新規事業やイノベーションを創出する立場になりたい</label>
+                            <label class="flex items-center"><input type="radio" name="q4" value="balance" class="mr-2"> ワークライフバランスを重視し、安定した職務を続けたい</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">5. 次のうち、自分のキャリアにおいて最も優先度が高いと感じる要素はどれですか？</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center"><input type="radio" name="q5" value="expertise" class="mr-2"> 専門性の向上</label>
+                            <label class="flex items-center"><input type="radio" name="q5" value="income" class="mr-2"> 収入・待遇</label>
+                            <label class="flex items-center"><input type="radio" name="q5" value="balance" class="mr-2"> ワークライフバランス</label>
+                            <label class="flex items-center"><input type="radio" name="q5" value="impact" class="mr-2"> 社会的インパクト</label>
+                            <label class="flex items-center"><input type="radio" name="q5" value="learning" class="mr-2"> 新しい経験や学び</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">6. どのような働き方を希望しますか？</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center"><input type="radio" name="q6" value="routine" class="mr-2"> 定型業務が中心の安定した仕事</label>
+                            <label class="flex items-center"><input type="radio" name="q6" value="project" class="mr-2"> プロジェクトベースの変化に富んだ仕事</label>
+                            <label class="flex items-center"><input type="radio" name="q6" value="creative" class="mr-2"> 創造性を活かせる企画・開発系の仕事</label>
+                            <label class="flex items-center"><input type="radio" name="q6" value="communication" class="mr-2"> 人と関わるコミュニケーション中心の仕事</label>
+                            <label class="flex items-center"><input type="radio" name="q6" value="analysis" class="mr-2"> 分析や探求を重視する専門的な仕事</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">7. 転職を考える主な理由は何ですか？（最大3つまで選択）</label>
+                        <div class="grid grid-cols-2 gap-2">
+                            <label class="flex items-center"><input type="checkbox" name="q7" value="skillup" class="mr-2"> スキルアップ・キャリアアップ</label>
+                            <label class="flex items-center"><input type="checkbox" name="q7" value="balance" class="mr-2"> ワークライフバランスの改善</label>
+                            <label class="flex items-center"><input type="checkbox" name="q7" value="challenge" class="mr-2"> 新しい分野へのチャレンジ</label>
+                            <label class="flex items-center"><input type="checkbox" name="q7" value="salary" class="mr-2"> 待遇の改善</label>
+                            <label class="flex items-center"><input type="checkbox" name="q7" value="environment" class="mr-2"> 職場環境・人間関係</label>
+                            <label class="flex items-center"><input type="checkbox" name="q7" value="future" class="mr-2"> 会社の将来性への不安</label>
+                        </div>
+                        <div class="mt-2">
+                            <label class="flex items-center"><input type="checkbox" name="q7" value="other" class="mr-2"> その他</label>
+                            <input type="text" name="q7_other" placeholder="具体的に記入" class="mt-1 border rounded px-2 py-1 w-full">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">8. 強いリスキリング（大幅な知識・スキルの習得）が必要な場合、どの程度の時間をかける意思がありますか？</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center"><input type="radio" name="q8" value="3months" class="mr-2"> 3ヶ月程度</label>
+                            <label class="flex items-center"><input type="radio" name="q8" value="6months" class="mr-2"> 6ヶ月程度</label>
+                            <label class="flex items-center"><input type="radio" name="q8" value="1year" class="mr-2"> 1年程度</label>
+                            <label class="flex items-center"><input type="radio" name="q8" value="over1year" class="mr-2"> 1年以上</label>
+                            <label class="flex items-center"><input type="radio" name="q8" value="depends" class="mr-2"> リスキリングの内容によって異なる</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">9. 新しい職種に転換するにあたり、以下のうち最も懸念していることは何ですか？</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center"><input type="radio" name="q9" value="learning" class="mr-2"> 新しい知識・スキルの習得</label>
+                            <label class="flex items-center"><input type="radio" name="q9" value="adaptation" class="mr-2"> 新しい環境への適応</label>
+                            <label class="flex items-center"><input type="radio" name="q9" value="career" class="mr-2"> キャリアパスの不確実性</label>
+                            <label class="flex items-center"><input type="radio" name="q9" value="salary" class="mr-2"> 収入・待遇の変化</label>
+                            <label class="flex items-center"><input type="radio" name="q9" value="balance" class="mr-2"> ワークライフバランスへの影響</label>
+                        </div>
+                        <div class="mt-2">
+                            <label class="flex items-center"><input type="radio" name="q9" value="other" class="mr-2"> その他</label>
+                            <input type="text" name="q9_other" placeholder="具体的に記入" class="mt-1 border rounded px-2 py-1 w-full">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">10. これまでに自主的に取り組んだ学習や自己啓発について教えてください。（200字以内）</label>
+                        <textarea name="q10" class="w-full border rounded px-3 py-2" rows="4" maxlength="200"></textarea>
+                    </div>
+                </div>
+
+                <!-- スキル・適性評価 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                    <h2 class="text-xl font-bold text-blue-600 mb-4">スキル・適性評価（15問）</h2>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">11. 以下のうち、自分が最も得意とするスキルを3つ選んでください。</label>
+                        <div class="grid grid-cols-2 gap-2">
+                            <label class="flex items-center"><input type="checkbox" name="q11" value="logical" class="mr-2"> 論理的思考・問題解決</label>
+                            <label class="flex items-center"><input type="checkbox" name="q11" value="creative" class="mr-2"> 創造性・アイデア発想</label>
+                            <label class="flex items-center"><input type="checkbox" name="q11" value="communication" class="mr-2"> コミュニケーション・交渉</label>
+                            <label class="flex items-center"><input type="checkbox" name="q11" value="data" class="mr-2"> データ分析・数値処理</label>
+                            <label class="flex items-center"><input type="checkbox" name="q11" value="leadership" class="mr-2"> チームマネジメント・リーダーシップ</label>
+                            <label class="flex items-center"><input type="checkbox" name="q11" value="project" class="mr-2"> プロジェクト管理・計画立案</label>
+                            <label class="flex items-center"><input type="checkbox" name="q11" value="writing" class="mr-2"> 文章作成・ドキュメンテーション</label>
+                            <label class="flex items-center"><input type="checkbox" name="q11" value="technical" class="mr-2"> 技術・製品に関する専門知識</label>
+                            <label class="flex items-center"><input type="checkbox" name="q11" value="customer" class="mr-2"> 顧客理解・ニーズ発掘</label>
+                            <label class="flex items-center"><input type="checkbox" name="q11" value="design" class="mr-2"> デザイン思考・UX設計</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">12. デジタル技術に関する以下のスキルについて、自己評価を5段階で行ってください。</label>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="block mb-1">基本的なPC操作スキル:</label>
+                                <div class="flex space-x-2">
+                                    <label><input type="radio" name="q12_pc" value="1" class="mr-1"> 1</label>
+                                    <label><input type="radio" name="q12_pc" value="2" class="mr-1"> 2</label>
+                                    <label><input type="radio" name="q12_pc" value="3" class="mr-1"> 3</label>
+                                    <label><input type="radio" name="q12_pc" value="4" class="mr-1"> 4</label>
+                                    <label><input type="radio" name="q12_pc" value="5" class="mr-1"> 5</label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block mb-1">データ分析ツール（Excel高度機能、BIツールなど）:</label>
+                                <div class="flex space-x-2">
+                                    <label><input type="radio" name="q12_data" value="1" class="mr-1"> 1</label>
+                                    <label><input type="radio" name="q12_data" value="2" class="mr-1"> 2</label>
+                                    <label><input type="radio" name="q12_data" value="3" class="mr-1"> 3</label>
+                                    <label><input type="radio" name="q12_data" value="4" class="mr-1"> 4</label>
+                                    <label><input type="radio" name="q12_data" value="5" class="mr-1"> 5</label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block mb-1">プログラミング/コーディングスキル:</label>
+                                <div class="flex space-x-2">
+                                    <label><input type="radio" name="q12_prog" value="1" class="mr-1"> 1</label>
+                                    <label><input type="radio" name="q12_prog" value="2" class="mr-1"> 2</label>
+                                    <label><input type="radio" name="q12_prog" value="3" class="mr-1"> 3</label>
+                                    <label><input type="radio" name="q12_prog" value="4" class="mr-1"> 4</label>
+                                    <label><input type="radio" name="q12_prog" value="5" class="mr-1"> 5</label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block mb-1">デジタルマーケティングツール:</label>
+                                <div class="flex space-x-2">
+                                    <label><input type="radio" name="q12_marketing" value="1" class="mr-1"> 1</label>
+                                    <label><input type="radio" name="q12_marketing" value="2" class="mr-1"> 2</label>
+                                    <label><input type="radio" name="q12_marketing" value="3" class="mr-1"> 3</label>
+                                    <label><input type="radio" name="q12_marketing" value="4" class="mr-1"> 4</label>
+                                    <label><input type="radio" name="q12_marketing" value="5" class="mr-1"> 5</label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block mb-1">クラウドサービス活用経験:</label>
+                                <div class="flex space-x-2">
+                                    <label><input type="radio" name="q12_cloud" value="1" class="mr-1"> 1</label>
+                                    <label><input type="radio" name="q12_cloud" value="2" class="mr-1"> 2</label>
+                                    <label><input type="radio" name="q12_cloud" value="3" class="mr-1"> 3</label>
+                                    <label><input type="radio" name="q12_cloud" value="4" class="mr-1"> 4</label>
+                                    <label><input type="radio" name="q12_cloud" value="5" class="mr-1"> 5</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">13. 言語スキルについてお答えください。</label>
+                        <div class="space-y-3">
+                            <div>
+                                <label class="block mb-1">英語読解:</label>
+                                <div class="flex space-x-2 flex-wrap">
+                                    <label><input type="radio" name="q13_read" value="1" class="mr-1"> 初級</label>
+                                    <label><input type="radio" name="q13_read" value="2" class="mr-1"> 中級</label>
+                                    <label><input type="radio" name="q13_read" value="3" class="mr-1"> 上級</label>
+                                    <label><input type="radio" name="q13_read" value="4" class="mr-1"> ビジネスレベル</label>
+                                    <label><input type="radio" name="q13_read" value="5" class="mr-1"> ネイティブ</label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block mb-1">英語会話:</label>
+                                <div class="flex space-x-2 flex-wrap">
+                                    <label><input type="radio" name="q13_speak" value="1" class="mr-1"> 初級</label>
+                                    <label><input type="radio" name="q13_speak" value="2" class="mr-1"> 中級</label>
+                                    <label><input type="radio" name="q13_speak" value="3" class="mr-1"> 上級</label>
+                                    <label><input type="radio" name="q13_speak" value="4" class="mr-1"> ビジネスレベル</label>
+                                    <label><input type="radio" name="q13_speak" value="5" class="mr-1"> ネイティブ</label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block mb-1">その他の外国語:</label>
+                                <input type="text" name="q13_other" placeholder="言語名を記入" class="border rounded px-2 py-1 w-full mb-2">
+                                <div class="flex space-x-2 flex-wrap">
+                                    <label><input type="radio" name="q13_other_level" value="1" class="mr-1"> 初級</label>
+                                    <label><input type="radio" name="q13_other_level" value="2" class="mr-1"> 中級</label>
+                                    <label><input type="radio" name="q13_other_level" value="3" class="mr-1"> 上級</label>
+                                    <label><input type="radio" name="q13_other_level" value="4" class="mr-1"> ビジネスレベル</label>
+                                    <label><input type="radio" name="q13_other_level" value="5" class="mr-1"> ネイティブ</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">14. 過去3年間で、業務に関連して取得した資格や受講した研修があれば教えてください。（200字以内）</label>
+                        <textarea name="q14" class="w-full border rounded px-3 py-2" rows="4" maxlength="200"></textarea>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">15. チームでの作業と個人での作業、どちらを好みますか？</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center"><input type="radio" name="q15" value="5" class="mr-2"> チームでの協働作業を強く好む</label>
+                            <label class="flex items-center"><input type="radio" name="q15" value="4" class="mr-2"> どちらかといえばチームでの作業を好む</label>
+                            <label class="flex items-center"><input type="radio" name="q15" value="3" class="mr-2"> どちらも同程度</label>
+                            <label class="flex items-center"><input type="radio" name="q15" value="2" class="mr-2"> どちらかといえば個人での作業を好む</label>
+                            <label class="flex items-center"><input type="radio" name="q15" value="1" class="mr-2"> 個人での作業を強く好む</label>
+                        </div>
+                    </div>
+
+                    <!-- 質問16-25も同様のパターンで続く -->
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">16. 新しい環境や状況の変化にどの程度柔軟に対応できますか？</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center"><input type="radio" name="q16" value="5" class="mr-2"> 非常に柔軟に対応できる</label>
+                            <label class="flex items-center"><input type="radio" name="q16" value="4" class="mr-2"> ある程度柔軟に対応できる</label>
+                            <label class="flex items-center"><input type="radio" name="q16" value="3" class="mr-2"> 時間をかければ対応できる</label>
+                            <label class="flex items-center"><input type="radio" name="q16" value="2" class="mr-2"> 変化への対応にはやや課題がある</label>
+                            <label class="flex items-center"><input type="radio" name="q16" value="1" class="mr-2"> 安定した環境で働くことを強く好む</label>
+                        </div>
+                    </div>
+
+                    <!-- 質問17-25は簡略化して記載 -->
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">21. あなたの仕事における強みと弱みをそれぞれ3つずつ挙げてください。（各200字以内）</label>
+                        <div class="mb-3">
+                            <label class="block text-sm text-gray-600 mb-1">強み:</label>
+                            <textarea name="q21_strength" class="w-full border rounded px-3 py-2" rows="4" maxlength="200"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-600 mb-1">弱み:</label>
+                            <textarea name="q21_weakness" class="w-full border rounded px-3 py-2" rows="4" maxlength="200"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 職種別適性質問 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                    <h2 class="text-xl font-bold text-blue-600 mb-4">職種別適性質問（15問）</h2>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">26. 営業職に関して：顧客との信頼関係構築において最も重要だと考える要素は何ですか？</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center"><input type="radio" name="q26" value="knowledge" class="mr-2"> 製品知識の深さと正確さ</label>
+                            <label class="flex items-center"><input type="radio" name="q26" value="communication" class="mr-2"> コミュニケーション能力と傾聴力</label>
+                            <label class="flex items-center"><input type="radio" name="q26" value="solution" class="mr-2"> 問題解決能力と提案力</label>
+                            <label class="flex items-center"><input type="radio" name="q26" value="follow" class="mr-2"> アフターフォローの質と迅速さ</label>
+                            <label class="flex items-center"><input type="radio" name="q26" value="honesty" class="mr-2"> 誠実さと約束を守る姿勢</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">29. 品質管理・サステナビリティに関して：製品の品質とサステナビリティのバランスについてどう考えますか？（150字以内）</label>
+                        <textarea name="q29" class="w-full border rounded px-3 py-2" rows="3" maxlength="150"></textarea>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">40. 高齢者向けソリューション開発に関して：高齢者向け製品・サービス開発で特に配慮すべき点は何だと考えますか？（150字以内）</label>
+                        <textarea name="q40" class="w-full border rounded px-3 py-2" rows="3" maxlength="150"></textarea>
+                    </div>
+                </div>
+
+                <!-- リスキリング意欲・適性 -->
+                <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                    <h2 class="text-xl font-bold text-blue-600 mb-4">リスキリング意欲・適性（10問）</h2>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">41. オンラインでの学習と対面での実習型学習、どちらの学習スタイルが自分に合っていると思いますか？</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center"><input type="radio" name="q41" value="5" class="mr-2"> オンライン学習が非常に合っている</label>
+                            <label class="flex items-center"><input type="radio" name="q41" value="4" class="mr-2"> どちらかといえばオンライン学習</label>
+                            <label class="flex items-center"><input type="radio" name="q41" value="3" class="mr-2"> どちらも同程度</label>
+                            <label class="flex items-center"><input type="radio" name="q41" value="2" class="mr-2"> どちらかといえば対面・実習型</label>
+                            <label class="flex items-center"><input type="radio" name="q41" value="1" class="mr-2"> 対面・実習型が非常に合っている</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">46. 次の技術領域のうち、学習意欲が高いものを3つ選んでください。</label>
+                        <div class="grid grid-cols-2 gap-2">
+                            <label class="flex items-center"><input type="checkbox" name="q46" value="iot" class="mr-2"> IoT・コネクテッド技術</label>
+                            <label class="flex items-center"><input type="checkbox" name="q46" value="ai" class="mr-2"> データ分析・AI活用</label>
+                            <label class="flex items-center"><input type="checkbox" name="q46" value="marketing" class="mr-2"> デジタルマーケティング</label>
+                            <label class="flex items-center"><input type="checkbox" name="q46" value="ux" class="mr-2"> UX/UIデザイン</label>
+                            <label class="flex items-center"><input type="checkbox" name="q46" value="sustainability" class="mr-2"> サステナビリティ・循環経済</label>
+                            <label class="flex items-center"><input type="checkbox" name="q46" value="pm" class="mr-2"> プロジェクトマネジメント手法</label>
+                            <label class="flex items-center"><input type="checkbox" name="q46" value="content" class="mr-2"> デジタルコンテンツ制作</label>
+                            <label class="flex items-center"><input type="checkbox" name="q46" value="cloud" class="mr-2"> クラウドサービス・プラットフォーム</label>
+                            <label class="flex items-center"><input type="checkbox" name="q46" value="health" class="mr-2"> ヘルスケア・ウェルネス</label>
+                            <label class="flex items-center"><input type="checkbox" name="q46" value="global" class="mr-2"> グローバルビジネススキル</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-bold mb-2">50. 新しい職種へのチャレンジについて、あなたの意気込みを教えてください。（200字以内）</label>
+                        <textarea name="q50" class="w-full border rounded px-3 py-2" rows="4" maxlength="200"></textarea>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="button" onclick="analyzeResults()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg text-lg">
+                        <i class="fas fa-chart-line mr-2"></i>分析結果を表示
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
