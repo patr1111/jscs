@@ -369,7 +369,10 @@
         </div>
     </div>
     <script>
-        // 必要なJavaScriptコードをここに追加
+        // ページ読み込み時に質問フォームを表示する
+        window.onload = function() {
+            document.getElementById('mainPage').classList.remove('hidden');
+        };
     </script>
 </body>
 </html>
