@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一般社団法人　日本シニア・キャリア・サポート協会</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <!-- ログイン画面 -->
+    <div id="loginPage" class="flex items-center justify-center min-h-screen">
+        <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+            <div class="text-center mb-8">
+                <h1 class="text-3xl font-bold text-blue-600 mb-2">AIお仕事探しコーチ</h1>
+                <p class="text-gray-600">一般社団法人日本シニア・キャリア・サポート協会</p>
+            </div>
+            <form id="loginForm" onsubmit="return false;">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="userId">
+                        <i class="fas fa-user mr-2"></i>社員ID
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="userId" type="text" placeholder="社員IDを入力">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                        <i class="fas fa-lock mr-2"></i>パスワード
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="パスワードを入力">
+                </div>
+                <div class="flex items-center justify-center">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" type="button" onclick="login()">
+                        ログイン
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        // ページ読み込み時のデバッグメッセージ
+        console.log('ページが読み込まれました');
+
+        function login() {
+            console.log('login関数が呼び出されました');
+            
+            const userId = document.getElementById('userId').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            console.log('入力値:', { userId, password });
+
+            if (userId === '111111' && password === '111111') {
+                console.log('ログイン成功 - リダイレクトします');
+                window.location.href = 'questions.html';
+            } else if (userId === '999999' && password === '111111') {
+                console.log('管理者ログイン成功 - リダイレクトします');
+                window.location.href = 'admin.html';
+            } else {
+                console.log('ログイン失敗 - アラートを表示します');
+                alert('社員IDまたはパスワードが正しくありません。');
+            }
+        }
+
+        // Enterキーでもログインできるようにする
+        document.getElementById('password').addEventListener('keypress', function(e) {
+            console.log('キーが押されました:', e.key);
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                console.log('Enterキーが押されました - ログインを実行します');
+                login();
+            }
+        });
+
+        // フォームの送信を防止
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            console.log('フォーム送信が試みられました');
+            e.preventDefault();
+            login();
+        });
+
+        // ログインボタンのクリックイベントを確認
+        document.querySelector('button[onclick="login()"]').addEventListener('click', function(e) {
+            console.log('ログインボタンがクリックされました');
+        });
+    </script>
+</body>
+</html>
+
